@@ -1,0 +1,41 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title><#= _name #></Title>
+      <Author>zaex</Author>
+      <Description><#= _description#></Description>
+      <HelpUrl></HelpUrl>
+      <Shortcut><#= _shortcut#></Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+<#for (int i=0; i<_vars.Count; ++i) { #>
+        <Literal Editable="true">
+          <ID><#=_vars[i].id #></ID>
+          <ToolTip><#=_vars[i].id #></ToolTip>
+          <Default><#=_vars[i].def #></Default>
+          <Function>1+1</Function>
+        </Literal>
+<# } #>        
+      </Declarations>
+      <Code Language="csharp" Delimiter="$"><![CDATA[<# foreach(var aline in _lines) {#> <#=aline#> <#}#>]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
+
+<#+
+public string _name;
+public string _description;
+public string _shortcut;
+public List<Var> _vars;
+public List<string> _lines;
+#>

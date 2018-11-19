@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:json2snippet"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="SnippetConverter" Height="176.051" Width="469.287">
+    <Grid Background="#FFDFFDED">
+        <Label x:Name="label" Content="Source Json" HorizontalAlignment="Left" Height="28" Margin="33,26,0,0" VerticalAlignment="Top" Width="121"/>
+        <Label x:Name="label1" Content="Target Dir" HorizontalAlignment="Left" Height="30" Margin="33,59,0,0" VerticalAlignment="Top" Width="121"/>
+        <TextBox x:Name="tb_src" HorizontalAlignment="Left" Height="33" Margin="116,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="258" FontSize="10" VerticalContentAlignment="Center" TextChanged="OnSrcTextChanged"/>
+        <TextBox x:Name="tb_target" HorizontalAlignment="Left" Height="33" Margin="116,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="258" FontSize="10" VerticalContentAlignment="Center" TextChanged="OnTargetSrcChanged"/>
+        <Button x:Name="buttonSrc" Content="Browse" HorizontalAlignment="Left" Height="33" Margin="374,26,0,0" VerticalAlignment="Top" Width="48" Click="OnClickBrowseSrcJson"/>
+        <Button x:Name="buttonTarget" Content="Browse" HorizontalAlignment="Left" Height="33" Margin="374,59,0,0" VerticalAlignment="Top" Width="48" Click="OnClickBrowseTargetDir"/>
+        <Button x:Name="buttonConvert" Content="Convert!" HorizontalAlignment="Left" Height="22" Margin="144,106,0,0" VerticalAlignment="Top" Width="188" Click="OnClickConvert"/>
+
     </Grid>
 </Window>
