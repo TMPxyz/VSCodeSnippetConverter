@@ -15,6 +15,7 @@ This utility will convert the snippets from VScode to Visual Studio.
 1. Select the vscode snippet .json file;
 2. Select a dir for generated .snippet files;
 3. Select "Convert";
+4. Import the generated .snippet files via VisualStudio snippet manager;
 
 ## Limitation
 
