@@ -84,7 +84,7 @@ namespace json2snippet
                     settings.MetadataPropertyHandling = MetadataPropertyHandling.Ignore;
                     var allSnippets = JsonConvert.DeserializeObject<Dictionary<string, VSCodeSnippet>>(fileContent, settings);
 
-                    Console.WriteLine($"found snippets = {allSnippets.Count}");
+                    //Console.WriteLine($"found snippets = {allSnippets.Count}");
 
                     foreach (var pr in allSnippets)
                     {
@@ -94,7 +94,7 @@ namespace json2snippet
                         var tpl = new VisualStudioSnippet();
                         tpl._name = name;
                         tpl._description = aSnippet.description ?? "No Description";
-                        tpl._shortcut = aSnippet.prefix;
+                        tpl._shortcut = _ProcessShortcut(aSnippet.prefix);
                         tpl._vars = _ParseVars(aSnippet.body);
                         tpl._lines = _ParseLines(aSnippet.body);
                         var outstring = tpl.TransformText();
@@ -110,6 +110,15 @@ namespace json2snippet
             {
                 MessageBox.Show(ex.ToString(), "Error");
             }
+        }
+
+        private string _ProcessShortcut(string prefix)
+        {
+            if( prefix.StartsWith("$") )
+            {
+                prefix = "x"+prefix.Substring(1);
+            }
+            return prefix;
         }
 
         private const string RE_NUM = @"\$([0-9]+)";
@@ -135,13 +144,13 @@ namespace json2snippet
 
         private string _ReplaceStringVar(Match match)
         {
-            string varName = string.Empty;
             for(int i=1; i<match.Groups.Count; ++i)
             {
                 var grp = match.Groups[i];
+                var varName = _ProcessVarName(grp.Value);
                 if( grp.Success )
                 {
-                    return $"${grp.Value}$";
+                    return $"${varName}$";
                 }
             }
             return "__ERROR__";
@@ -160,7 +169,7 @@ namespace json2snippet
                         var grp = match.Groups[i];
                         if (grp.Success)
                         {
-                            string varName = grp.Value;
+                            string varName = _ProcessVarName(grp.Value);
                             varDict[varName] = Var.Create(varName);
                         }
                     }
@@ -169,6 +178,19 @@ namespace json2snippet
 
             var varLst = varDict.Values.ToList();
             return varLst;
+        }
+
+        /// <summary>
+        /// rename a pure number to a valid varname
+        /// </summary>
+        private string _ProcessVarName(string varName)
+        {
+            int v = 0;
+            if( int.TryParse(varName, out v) )
+            {
+                varName = "_var"+varName+"_";
+            }
+            return varName;
         }
 
         private void OnSrcTextChanged(object sender, TextChangedEventArgs e)
@@ -193,3 +215,5 @@ namespace json2snippet
         }
     }
 }
+
+

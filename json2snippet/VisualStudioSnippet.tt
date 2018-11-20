@@ -27,7 +27,7 @@
         </Literal>
 <# } #>        
       </Declarations>
-      <Code Language="csharp" Delimiter="$"><![CDATA[<# foreach(var aline in _lines) {#> <#=aline#> <#}#>]]></Code>
+      <Code Language="csharp" Delimiter="$"><![CDATA[<# foreach(var aline in _lines) {#><#=aline#><#}#>]]></Code>
     </Snippet>
   </CodeSnippet>
 </CodeSnippets>

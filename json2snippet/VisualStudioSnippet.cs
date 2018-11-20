@@ -99,14 +99,12 @@ for (int i=0; i<_vars.Count; ++i) {
             
             #line default
             #line hidden
-            this.Write(" ");
             
             #line 30 "E:\works\programs\OpenSource\SnippetConverter\json2snippet\VisualStudioSnippet.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(aline));
             
             #line default
             #line hidden
-            this.Write(" ");
             
             #line 30 "E:\works\programs\OpenSource\SnippetConverter\json2snippet\VisualStudioSnippet.tt"
 }
