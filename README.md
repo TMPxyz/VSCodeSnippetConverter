@@ -50,7 +50,7 @@ To this:
             <SnippetType>Expansion</SnippetType>
           </SnippetTypes>
           <Title>Service locator define</Title>
-          <Author>zaex</Author>
+          <Author>converted_from_vscode</Author>
           <Description>used by ServiceLocator</Description>
           <HelpUrl></HelpUrl>
           <Shortcut>xvvvv</Shortcut>
