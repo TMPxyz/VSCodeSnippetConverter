@@ -53,30 +53,32 @@ To this:
           <Author>zaex</Author>
           <Description>used by ServiceLocator</Description>
           <HelpUrl></HelpUrl>
-          <Shortcut>$vvvv</Shortcut>
+          <Shortcut>xvvvv</Shortcut>
         </Header>
         <Snippet>
           <Declarations>
             <Literal Editable="true">
-              <ID>1</ID>
-              <ToolTip>1</ToolTip>
-              <Default>1</Default>
+              <ID>_var1_</ID>
+              <ToolTip>_var1_</ToolTip>
+              <Default>_var1_</Default>
               <Function>1+1</Function>
             </Literal>
             <Literal Editable="true">
-              <ID>2</ID>
-              <ToolTip>2</ToolTip>
-              <Default>2</Default>
+              <ID>_var2_</ID>
+              <ToolTip>_var2_</ToolTip>
+              <Default>_var2_</Default>
               <Function>1+1</Function>
             </Literal>
 
           </Declarations>
-          <Code Language="csharp" Delimiter="$"><![CDATA[ [SerializeField][TypeRestriction(typeof(I$1$))][Tooltip("")]
-      private MonoBehaviour _mono$1$;
-      private I$1$ _$2$;
-      public static I$1$ $2$ { get{ if(Instance._$2$ == null) {Instance._Init$1$();} return Instance._$2$; } }
-     ]]></Code>
+          <Code Language="csharp" Delimiter="$"><![CDATA[[SerializeField][TypeRestriction(typeof(I$_var1_$))][Tooltip("")]
+    private MonoBehaviour _mono$_var1_$;
+    private I$_var1_$ _$_var2_$;
+    public static I$_var1_$ $_var2_$ { get{ if(Instance._$_var2_$ == null) {Instance._Init$_var1_$();} return Instance._$_var2_$; } }
+    ]]></Code>
         </Snippet>
       </CodeSnippet>
     </CodeSnippets>
+
+
 
