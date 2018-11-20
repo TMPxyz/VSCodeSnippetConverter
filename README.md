@@ -19,7 +19,7 @@ This utility will convert the snippets from VScode to Visual Studio.
 
 ## Limitation
 
-1. vscode snippet "body" section needs to has array form instead of a single string;
+1. vscode snippet "body" section must be in array form instead of a single string;
 2. don't support vscode snippet variable transform;
 3. don't support vscode built-in env variables;
 
