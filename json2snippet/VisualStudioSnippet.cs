@@ -42,7 +42,7 @@ namespace json2snippet
             
             #line default
             #line hidden
-            this.Write("</Title>\r\n      <Author>zaex</Author>\r\n      <Description>");
+            this.Write("</Title>\r\n      <Author>converted_from_vscode</Author>\r\n      <Description>");
             
             #line 15 "E:\works\programs\OpenSource\SnippetConverter\json2snippet\VisualStudioSnippet.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_description));

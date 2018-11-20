@@ -11,7 +11,7 @@
         <SnippetType>Expansion</SnippetType>
       </SnippetTypes>
       <Title><#= _name #></Title>
-      <Author>zaex</Author>
+      <Author>converted_from_vscode</Author>
       <Description><#= _description#></Description>
       <HelpUrl></HelpUrl>
       <Shortcut><#= _shortcut#></Shortcut>
